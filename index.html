@@ -210,15 +210,17 @@
 
     <button class="btn" id="toggleButton">Read</button>
 
-    <script>
-        const envelope = document.getElementById('envelope');
-        const toggleButton = document.getElementById('toggleButton');
+<script>
+    const envelope = document.getElementById('envelope');
+    const toggleButton = document.getElementById('toggleButton');
 
-        toggleButton.addEventListener('click', function () {
-            envelope.classList.toggle('open');
-            toggleButton.textContent = envelope.classList.contains('open') ? 'Read' : 'Close';
-        });
-    </script>
+    toggleButton.addEventListener('click', function () {
+        envelope.classList.toggle('open');
+        
+        // Corrected the text logic
+        toggleButton.textContent = envelope.classList.contains('open') ? 'Close' : 'Read';
+    });
+</script>
 
 </body>
 </html>
