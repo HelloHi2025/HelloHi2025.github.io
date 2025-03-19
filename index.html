@@ -154,6 +154,11 @@
         left: 50%;
         transform: translateX(-50%) translateY(100%); /* Starts fully hidden inside */
     }
+    
+    .envelope-container.open .letter {
+        opacity: 1;
+    
+    }
 
     /* When the envelope opens */
     .open .letter {
@@ -187,7 +192,6 @@
     <div class="heart"></div>
     <div class="heart"></div>
 
-<main class="container"></main>
     <div class="envelope-container" id="envelope">
         <div class="flap" id="flap"></div>
         <div class="letter" id="letter">
