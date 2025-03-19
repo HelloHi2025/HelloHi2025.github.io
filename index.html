@@ -128,51 +128,39 @@
         }
 
         /* 🌟 Mobile Optimization */
-        @media screen and (max-width: 768px) {
-            .envelope-container {
-                width: 90vw;  /* Adjust width to fit the screen */
-                height: 60vh; /* Adjust height to scale properly */
-            }
+@media screen and (max-width: 768px) {
+    .envelope-container {
+        width: 90vw;  /* Adjust width to fit the screen */
+        height: 60vh; /* Adjust height to scale properly */
+    }
 
-            .letter {
-    position: absolute;
-    width: 85%;
-    height: 85%;
-    background-color: white;
-    padding: 15px;
-    text-align: left;
-    font-size: 18px;
-    line-height: 1.6;
-    border-radius: 5px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    opacity: 0;
-    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
-    overflow-y: auto;
+    .letter {
+        position: absolute;
+        width: 85%;
+        height: 85%;
+        background-color: white;
+        padding: 15px;
+        text-align: left;
+        font-size: 18px;
+        line-height: 1.6;
+        border-radius: 5px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        opacity: 0;
+        transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+        overflow-y: auto;
 
-    /* Move the letter to the top but keep spacing */
-    top: 10px;
-    left: 50%;
-    transform: translateX(-50%); /* Fixes unwanted left/right movement */
-            }
+        /* Fix letter positioning */
+        top: 20px;  /* Adjust to move higher */
+        left: 50%;
+        transform: translateX(-50%) translateY(100%); /* Starts fully hidden inside */
+    }
 
-/* When the envelope opens */
-.open .letter {
-    transform: translateX(-50%) translateY(0); /* Opens straight up without side movement */
-    opacity: 1;
-                .letter h3 {
-                    font-size: 18px; /* Slightly smaller heading */
-                }
-    
-                .letter p {
-                    font-size: 14px; /* Adjust paragraph size for better reading */
-                }
-    
-                .btn {
-                    font-size: 16px;  /* Make the button smaller */
-                    padding: 10px 20px;
-                }
-            }
-        }
+    /* When the envelope opens */
+    .open .letter {
+        transform: translateX(-50%) translateY(0); /* Moves ONLY UP, no side movement */
+        opacity: 1;
+    }
+}
     </style>
 </head>
 <body>
