@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Secret </title>
+    <style>
+        body {
+            background-color: #F1E7EB;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Floating Hearts */
+        @keyframes float {
+            0% { transform: translateY(0) scale(1); opacity: 1; }
+            50% { opacity: 0.8; }
+            100% { transform: translateY(-100vh) scale(1.5); opacity: 0; }
+        }
+
+        .heart {
+            position: absolute;
+            bottom: -10px;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 0, 100, 0.2);
+            clip-path: path("M24.8,4.1C22.4,1.6,18.8,1.6,16.4,4.1l-1.2,1.2L14,4.1C11.6,1.6,8,1.6,5.6,4.1c-2.4,2.4-2.4,6.2,0,8.6l9.6,9.6c0.8,0.8,2,0.8,2.8,0l9.6-9.6C27.2,10.2,27.2,6.4,24.8,4.1z");
+            animation: float 6s linear infinite;
+        }
+
+        .heart:nth-child(2) { left: 15%; animation-duration: 7s; }
+        .heart:nth-child(3) { left: 35%; animation-duration: 5s; }
+        .heart:nth-child(4) { left: 55%; animation-duration: 6.5s; }
+        .heart:nth-child(5) { left: 75%; animation-duration: 7.2s; }
+        .heart:nth-child(6) { left: 90%; animation-duration: 6s; }
+
+        /* Envelope */
+        .envelope-container {
+            position: relative;
+            width: 800px;
+            height: 500px;
+            background-color: #FF91B9;
+            border-radius: 5px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            overflow: hidden;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+         /* Envelope Bottom */
+         .envelope-body {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 75%;
+            background-color: #FFB6C1;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+
+        .letter {
+            position: absolute;
+            width: 85%;
+            height: 85%;
+
+            background-color: white;
+            padding: 15px;
+            text-align: left;
+            font-size: 18px;
+            line-height: 1.6;
+            border-radius: 5px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            transform: translateY(100%);
+            opacity: 0;
+            transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+            overflow-y: auto;
+        }
+
+        .letter h3 {
+            margin-top: 0;
+        }
+
+        .btn {
+            margin-top: 20px;
+            padding: 14px 24px;
+            background-color: #FF4D6D;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 20px;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #D8435E;
+        }
+
+        /* Scrollbar Styling */
+        .letter::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .letter::-webkit-scrollbar-thumb {
+            background-color: #FF91B9;
+            border-radius: 4px;
+        }
+
+        .letter::-webkit-scrollbar-track {
+            background: #f1e7eb;
+        }
+
+        /* When envelope is opened */
+        .open .flap {
+            transform: rotateX(180deg);
+        }
+
+        .open .letter {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        /* 🌟 Mobile Optimization */
+        @media screen and (max-width: 768px) {
+         .envelope-container {
+            width: 90vw;  /* Adjust width to fit the screen */
+            height: 60vh; /* Adjust height to scale properly */
+        }
+
+        .letter {
+            width: 90%;    /* Make the letter smaller on mobile */
+            height: 70%;   /* Ensure it fits within the envelope */
+            font-size: 14px; /* Smaller text for better readability */
+            padding: 10px; /* Reduce padding for compact display */
+        }
+
+        .letter h3 {
+            font-size: 18px; /* Slightly smaller heading */
+        }
+
+        .letter p {
+            font-size: 14px; /* Adjust paragraph size for better reading */
+        }
+
+        .btn {
+            font-size: 16px;  /* Make the button smaller */
+            padding: 10px 20px;
+        }
+    }
+
+    </style>
+</head>
+<body>
+
+    <h1> Hi </h1>
+
+    <!-- Floating hearts for a romantic background -->
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+
+    <div class="envelope-container" id="envelope">
+        <div class="flap" id="flap"></div>
+        <div class="letter" id="letter">
+            <h3>Dear, Catherine</h3>
+            <p>
+                I don't know how to begin this letter, maybe because I never thought about writing something like this. 
+                Honestly, this is my first time making a confession, and I know it’s a bit cowardly of me to do it anonymously. 
+                I’ve spent months convincing myself that what I feel for you is nothing more than platonic admiration, that it’s just a temporary thought, something that will pass. 
+                But the truth is, I’ve been in denial. I don’t know why. Maybe because I never expected it to happen in the first place. 
+                Maybe because I’m not the type of person you’d ever see that way. 
+                I won’t give away too many details because I’m sure you’d figure out who I am. 
+                But all I really want to say is that I admire you, not for any specific reason, but simply because you are you. 
+                Honestly, you have this way of making the world feel lighter. I don’t think you even realize how wonderful you are. 
+                You know, sometimes i wonder what it would be like to be loved by you. 
+                But I know I shouldn't think about it much. 
+                I also realized that my friends were right that eventually my feelings for you would overflow and I would end up confessing to you directly, but I don’t want that to happen, 
+                so I’m choosing to confess anonymously right now. I’m not expecting anything in return. I just needed to let this out. 
+            </p>
+        </div>
+    </div>
+
+    <button class="btn" id="toggleButton">Read</button>
+
+    <script>
+        const envelope = document.getElementById('envelope');
+        const toggleButton = document.getElementById('toggleButton');
+
+        toggleButton.addEventListener('click', function () {
+            envelope.classList.toggle('open');
+            toggleButton.textContent = envelope.classList.contains('open') ? 'Read' : 'Close';
+        });
+    </script>
+
+</body>
+</html>
