@@ -134,17 +134,27 @@
                 height: 60vh; /* Adjust height to scale properly */
             }
 
-            .letter {
-                width: 95%;  /* Make the letter slightly bigger for better fit */
-                height: 80%;  /* Ensure it fits well inside the pink area */
-                padding: 12px;
-                font-size: 16px; /* Better text readability */
-                bottom: 5px; /* Moves letter downward */
-                left: 50%;
-                transform: translateX(-50%); /* Centers it properly */
-                overflow-y: auto; /* Allows scrolling */
-            }
-
+            ..letter {
+    position: absolute;
+    width: 85%;
+    height: 85%;
+    background-color: white;
+    padding: 15px;
+    text-align: left;
+    font-size: 18px;
+    line-height: 1.6;
+    border-radius: 5px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform: translateY(100%);
+    opacity: 0;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    overflow-y: auto;
+    
+    /* Move the letter to the top but leave space */
+    top: 10px;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
             .letter h3 {
                 font-size: 18px; /* Slightly smaller heading */
             }
