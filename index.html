@@ -70,7 +70,6 @@
             position: absolute;
             width: 85%;
             height: 85%;
-
             background-color: white;
             padding: 15px;
             text-align: left;
@@ -127,34 +126,38 @@
             transform: translateY(0);
             opacity: 1;
         }
+
         /* 🌟 Mobile Optimization */
         @media screen and (max-width: 768px) {
-         .envelope-container {
-            width: 90vw;  /* Adjust width to fit the screen */
-            height: 60vh; /* Adjust height to scale properly */
-        }
+            .envelope-container {
+                width: 90vw;  /* Adjust width to fit the screen */
+                height: 60vh; /* Adjust height to scale properly */
+            }
 
-        .letter {
-            width: 90%;    /* Make the letter smaller on mobile */
-            height: 90%;   /* Ensure it fits within the envelope */
-            font-size: 16px; /* Smaller text for better readability */
-            padding: 10px; /* Reduce padding for compact display */
-        }
+            .letter {
+                width: 95%;  /* Make the letter slightly bigger for better fit */
+                height: 80%;  /* Ensure it fits well inside the pink area */
+                padding: 12px;
+                font-size: 16px; /* Better text readability */
+                bottom: 5px; /* Moves letter downward */
+                left: 50%;
+                transform: translateX(-50%); /* Centers it properly */
+                overflow-y: auto; /* Allows scrolling */
+            }
 
-        .letter h3 {
-            font-size: 18px; /* Slightly smaller heading */
-        }
+            .letter h3 {
+                font-size: 18px; /* Slightly smaller heading */
+            }
 
-        .letter p {
-            font-size: 14px; /* Adjust paragraph size for better reading */
-        }
+            .letter p {
+                font-size: 14px; /* Adjust paragraph size for better reading */
+            }
 
-        .btn {
-            font-size: 16px;  /* Make the button smaller */
-            padding: 10px 20px;
+            .btn {
+                font-size: 16px;  /* Make the button smaller */
+                padding: 10px 20px;
+            }
         }
-    }
-
     </style>
 </head>
 <body>
